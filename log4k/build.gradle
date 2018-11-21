@@ -9,3 +9,5 @@ dependencies {
     testImplementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation "junit:junit:$junit_version"
 }
+
+apply from: '../build-system/deploy.gradle'

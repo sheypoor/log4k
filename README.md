@@ -1,3 +1,6 @@
+ [ ![Download](https://api.bintray.com/packages/hadilq/Sheypoor/log4k/images/download.svg) ](https://bintray.com/hadilq/Sheypoor/log4k/_latestVersion)
+ [ ![Download](https://api.bintray.com/packages/hadilq/Sheypoor/log4k-android/images/download.svg) ](https://bintray.com/hadilq/Sheypoor/log4k-android/_latestVersion)
+
 Log4k
 ---
 This is a simple library for logging in Kotlin. It's inspired by the famous Apache Log4j library.
@@ -8,6 +11,21 @@ After installation, you just need to call a one letter function like the followi
 ```kotlin
     d("This is my log")
 ```
+For more advance logging experience you can describe the assumptions of a method with this library as follows.
+```kotlin
+   fun exampleMethod(foo: Boolean, bar: Boolean, ..., baz: Any?) {
+       assumeTrue("Message of AssertionError when this assumption is not satisfied", foo)
+           ?.assumeFalse("The same as the above message", bar)
+           ...
+           ?.assumeNotNull("An other message", baz) {
+               // If all the above assumptions get satisfied then this callback will be running.
+               // Else an Assertion log will be triggered on the proper Appenders.
+           }
+   }
+```
+In this way, a new developer in your team easily will understand the assumptions of the writer of the method. Also, if
+each of the assumptions is not satisfied in the runtime, you can log the AssertionError to the Crashlytics or other
+services for another review of the method in the future.
 
 Installation
 ---

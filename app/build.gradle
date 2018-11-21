@@ -24,8 +24,10 @@ android {
 
 dependencies {
 
-    implementation project(':log4k')
-    implementation project(':android')
+//    implementation project(':log4k')
+//    implementation project(':android')
+    implementation "com.log4k:log4k:$libVersion"
+    implementation "com.log4k:log4k-android:$libVersion"
 
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
