@@ -1,0 +1,59 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'org.jetbrains.dokka'
+apply from: '../build-system/keystore.gradle'
+
+group = groupId
+project.archivesBaseName = artifactId
+version = libVersion
+
+dokka {
+    outputFormat = 'html'
+    outputDirectory = "$buildDir/javadoc"
+}
+
+bintray {
+    user = 'hadilq'
+    key = api_key
+    configurations = ['archives']
+    publish = true
+    override = false
+    pkg {
+        repo = 'Sheypoor'
+        name = 'log4k'
+        version {
+            name = libVersion
+        }
+    }
+}
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+            groupId groupId
+            artifactId artifactId
+            version libVersion
+            name artifactId
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.java.srcDirs
+}
+
+javadoc.dependsOn 'dokka'
+javadoc.exclude(['**/*.kt'])
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+    // options.encoding = 'UTF-8'
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
