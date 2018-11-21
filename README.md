@@ -1,3 +1,6 @@
+ [ ![Download](https://api.bintray.com/packages/hadilq/Sheypoor/log4k/images/download.svg) ](https://bintray.com/hadilq/Sheypoor/log4k/_latestVersion)
+ [ ![Download](https://api.bintray.com/packages/hadilq/Sheypoor/log4k-android/images/download.svg) ](https://bintray.com/hadilq/Sheypoor/log4k-android/_latestVersion)
+
 Log4k
 ---
 This is a simple library for logging in Kotlin. It's inspired by the famous Apache Log4j library.
