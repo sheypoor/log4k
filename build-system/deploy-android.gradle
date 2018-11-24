@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'org.jetbrains.dokka'
 
 def gradlePropertiesFile = rootProject.file('../build-system/keystore.gradle')
-if (!gradlePropertiesFile.exists()) {
+if (gradlePropertiesFile.exists()) {
     apply from: '../build-system/keystore.gradle'
 } else {
     ext {
