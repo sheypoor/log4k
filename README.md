@@ -9,7 +9,7 @@ Usage
 ---
 After installation, you just need to call a one letter function like the following.
 ```kotlin
-    d("This is my log")
+     d("This is my log")
 ```
 For more advance logging experience you can describe the assumptions of a method with this library as follows.
 ```kotlin
