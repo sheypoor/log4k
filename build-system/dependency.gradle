@@ -8,5 +8,5 @@ ext {
     groupId = 'com.log4k'
     artifactId = 'log4k'
     androidArtifactId = 'log4k-android'
-    libVersion = '1.0.0'
+    libVersion = '1.0.1'
 }

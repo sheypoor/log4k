@@ -18,8 +18,12 @@ For more advance logging experience you can describe the assumptions of a method
            ?.assumeFalse("The same as the above message", bar)
            ...
            ?.assumeNotNull("An other message", baz) {
-               // If all the above assumptions get satisfied then this callback will be running.
+               // If all the above assumptions get satisfied then this block will be running.
                // Else an Assertion log will be triggered on the proper Appenders.
+           }
+           // Add more assumptions for the next block
+           ?.assumeEquals("A message", foo, bar) {
+               // This block will be running if all the above assumptions are true.
            }
    }
 ```
