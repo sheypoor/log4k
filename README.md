@@ -36,9 +36,10 @@ Installation
 ---
 Download it in gradle for your Android app like this
 ```groovy
-implementation 'com.log4k:log4k:1.0.0'
-implementation 'com.log4k:log4k-android:1.0.0'
+implementation "com.log4k:log4k:${log4kVersion}"
+implementation "com.log4k:log4k-android:${log4kVersion}"
 ```
+For the recent version, check out the Bintray badges on top of this README file.
 
 Then in the `onCreate` method of your `Application` class setup it like this
 ```kotlin
@@ -53,3 +54,8 @@ if (BuildConfig.DEBUG) {
 As you can see, you can any kind of appender to handle different kinds of logs. For instance, the `AndroidAppender`
 appender log as an ordinary Android `Log`. Or the `DefaultAppender(writer = PrintWriter(File(externalCacheDir, "debug-log.txt")))`
 appender log into a file in external cache directory.
+
+Contribution
+---
+Just create your branch from master branch, change it, write additional tests, satisfy all tests, create your pull
+request, thank you, you're awesome.

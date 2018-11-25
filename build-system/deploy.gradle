@@ -1,7 +1,15 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'org.jetbrains.dokka'
-apply from: '../build-system/keystore.gradle'
+
+def gradlePropertiesFile = rootProject.file('../build-system/keystore.gradle')
+if (gradlePropertiesFile.exists()) {
+    apply from: '../build-system/keystore.gradle'
+} else {
+    ext {
+        api_key = ''
+    }
+}
 
 group = groupId
 project.archivesBaseName = artifactId
