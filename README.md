@@ -1,3 +1,4 @@
+ [![Build Status](https://travis-ci.com/sheypoor/log4k.svg?branch=master)](https://travis-ci.com/sheypoor/log4k)
  [ ![Download](https://api.bintray.com/packages/hadilq/Sheypoor/log4k/images/download.svg) ](https://bintray.com/hadilq/Sheypoor/log4k/_latestVersion)
  [ ![Download](https://api.bintray.com/packages/hadilq/Sheypoor/log4k-android/images/download.svg) ](https://bintray.com/hadilq/Sheypoor/log4k-android/_latestVersion)
 
